@@ -14,7 +14,7 @@ Install `uv` by following the [`uv` docs](https://docs.astral.sh/uv/).
 After installing `uv`, download the roboRIO dependencies.
 
 ```sh
-uv run robotpy sync --no-install
+uv run robotpy sync
 ```
 
 `uv run` will automatically create a virtual environment and install our dependencies for local development.
