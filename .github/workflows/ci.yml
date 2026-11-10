@@ -38,7 +38,7 @@ jobs:
       - name: Install dependencies
         run: |
           uv sync --locked
-      - run: uv run robotpy coverage test --no-isolation
+      - run: uv run robotpy test --coverage-mode --no-isolation
       - run: uv run coverage xml
       - uses: actions/upload-artifact@v6
         with:
