@@ -3,12 +3,55 @@
 # on your robot
 #
 
+[tool.coverage.run]
+branch = true
+omit = ["config.py", "config-3.py"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if typing.TYPE_CHECKING:",
+]
+
 [tool.mypy]
 check_untyped_defs = true
 warn_redundant_casts = true
 warn_unused_ignores = true
 warn_unreachable = true
 strict_equality = true
+
+[tool.poe.tasks]
+deploy = "robotpy deploy"
+download = "robotpy sync --no-install"
+sim = "robotpy sim"
+test = "robotpy test"
+type-check = "mypy ."
+
+[tool.pyright]
+exclude = [
+    "ctre_sim",
+    "logs",
+    # Default excludes
+    "**/__pycache__",
+    "**/.*",
+]
+
+reportUnannotatedClassAttribute = "none"
+reportUninitializedInstanceVariable = "none"
+reportUnusedCallResult = "none"
+reportExplicitAny = "none"
+reportUntypedClassDecorator = "none"
+reportUnusedParameter = "none"
+
+[tool.pytest]
+addopts = ["--maxfail=2"]
+faulthandler_timeout = "90"
+pythonpath = ["."]
+strict = true
+testpaths = ["tests"]
+verbosity_test_cases = 1
 
 [tool.ruff]
 target-version = "py314"
