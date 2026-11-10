@@ -231,6 +231,21 @@ wheels = [
 ]
 
 [[package]]
+name = "pybiocore"
+version = "0.0.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "phoenix6" },
+    { name = "robotpy", extra = ["commands2"] },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "phoenix6", specifier = "~=26.70a2" },
+    { name = "robotpy", extras = ["commands2"], specifier = "==2027.0.0a8" },
+]
+
+[[package]]
 name = "pycparser"
 version = "3.12"
 source = { registry = "https://pypi.org/simple" }
@@ -296,21 +311,6 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/c7/a1/4d2777c147a9e42a5f32cc3b415898db4135467e33d32564c74489f86872/pyntcore-2027.0.0a8-cp315-cp315-manylinux_2_39_aarch64.whl", hash = "sha256:f29e797d5bb2b83f2c013ff5fd6bcd048ad1bfbaf2888b027de096eccace00ca", size = 1439991, upload-time = "2026-11-01T05:39:51.947Z" },
     { url = "https://files.pythonhosted.org/packages/fa/53/eed8bf5b5e8fc8432d765aca016d8fdfce331f22c5f3bd53d4ac4233497e/pyntcore-2027.0.0a8-cp315-cp315-manylinux_2_39_x86_64.whl", hash = "sha256:7f411bbed71df347b6bc40eac49d9cee222fe78f486f72e5912ba7478e02816b", size = 1533869, upload-time = "2026-11-01T05:39:53.305Z" },
     { url = "https://files.pythonhosted.org/packages/7a/e9/f2ebe64403b9f0c551bcec95b8d6ec2e9c45f13b49e5fe481fcf00cf74b9/pyntcore-2027.0.0a8-cp315-cp315-win_amd64.whl", hash = "sha256:f02835b40623bb9ae97a3c810796588369fc2db678c2625f22bdc01b854c8dcc", size = 825252, upload-time = "2026-11-01T05:39:54.652Z" },
-]
-
-[[package]]
-name = "pypotatocore"
-version = "0.0.0"
-source = { virtual = "." }
-dependencies = [
-    { name = "phoenix6" },
-    { name = "robotpy", extra = ["commands2"] },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "phoenix6", specifier = "~=26.70a2" },
-    { name = "robotpy", extras = ["commands2"], specifier = "==2027.0.0a8" },
 ]
 
 [[package]]
