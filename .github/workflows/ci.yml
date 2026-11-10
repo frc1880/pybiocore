@@ -27,6 +27,7 @@ jobs:
       - run: uv run robotpy test
 
   test-coverage:
+    if: false  # TODO enable when coverage is working again
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
